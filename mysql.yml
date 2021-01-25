@@ -3,8 +3,6 @@
    tasks:
     - name: Install MySQL
       apt:
-         name: "{{ item }}"
+         name: ['python-mysqldb','mysql-server']
          state: present
-      with_items:
-         - python-mysqldb
-         - mysql-server
+      
