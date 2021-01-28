@@ -15,17 +15,19 @@
         update_cache: yes
       with_items:
           - maven 
-
-    - name: download jenkins.repo
-      get_url:
-       url: https://pkg.jenkins.io/debian-stable binary/
-       dest: /etc/apt/sources.list.d/jenkins.list 
-       mode: 0644
-
+    
     - name: import jenkins key
       apt_key:
        state: present
        key: https://pkg.jenkins.io/debian/jenkins-ci.org.key
+    
+
+    - name: download jenkins.repo
+      get_url:
+       url: https://pkg.jenkins.io/debian-stable binary
+       dest: /etc/apt/sources.list.d/jenkins.list'
+       
+
     
 
     - name: updating server
