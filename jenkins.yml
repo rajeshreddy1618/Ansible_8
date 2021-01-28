@@ -51,4 +51,3 @@
       debug:
        var: result.stdout        
 
-https://pkg.jenkins.io/debian/binary
