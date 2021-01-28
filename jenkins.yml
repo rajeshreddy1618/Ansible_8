@@ -17,9 +17,8 @@
           - maven 
     
     - name: import jenkins key
-      apt_key:
-       key: https://pkg.jenkins.io/debian/jenkins-ci.org.key
-       state: present
+      get_url:
+       url: https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
        
     - name: download jenkins.repo
       get_url:
