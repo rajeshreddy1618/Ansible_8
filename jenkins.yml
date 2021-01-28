@@ -18,18 +18,14 @@
     
     - name: import jenkins key
       apt_key:
-       state: present
        key: https://pkg.jenkins.io/debian/jenkins-ci.org.key
-    
-
+       state: present
+       
     - name: download jenkins.repo
       get_url:
        url: https://pkg.jenkins.io/debian-stable binary
        dest: /etc/apt/sources.list.d/jenkins.list'
        
-
-    
-
     - name: updating server
       shell: apt-get update
       
