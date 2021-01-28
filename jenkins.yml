@@ -17,7 +17,8 @@
           - maven 
 
     - name: adding jenkins repository
-      get_url: wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add - 
+      get_url: 
+        url: wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add - 
 
     - name: Adding the jenkins repo to repo source.list file
       shell:  echo deb https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list 
