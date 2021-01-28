@@ -22,12 +22,6 @@
     - name: install jenkins
       shell: cd /user1 ; nohup java -DJENKINS_HOME=/user1/jenkins -jar jenkins.war &
 
-    
-
-    - name: enable jenkins
-      systemd:
-       name: jenkins
-       enabled: true
 
     - name: sleep for 30 seconds and continue with play
       wait_for: timeout=30
