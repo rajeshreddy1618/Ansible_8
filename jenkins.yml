@@ -31,7 +31,7 @@
     - name: start jenkins server
       service:
         name: jenkins
-        state: started 
+        state: start
 
     - name: enable jenkins
       systemd:
