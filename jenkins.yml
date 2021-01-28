@@ -29,9 +29,9 @@
       shell: apt-get install -y
 
     - name: start jenkins server
-      service:
-        name: jenkins
-        state: start
+      systemd:
+       name: jenkins
+       state: started
 
     - name: enable jenkins
       systemd:
