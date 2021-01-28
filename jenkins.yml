@@ -23,9 +23,10 @@
       shell:  echo deb https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list 
 
     - name: install jenkins
-      shell: sudo apt-get update | apt-get install jenkins -y 
+      shell: apt-get install jenkins -y 
 
     - name: start jenkins server
       service:
         name: jenkins
         state: start         
+
