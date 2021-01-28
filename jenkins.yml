@@ -18,15 +18,12 @@
 
     - name: adding jenkins repository
       shell:  wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add - 
-      
+
     - name: Adding the jenkins repo to repo source.list file
       shell:  echo deb https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list 
 
     - name: install jenkins
-      apt:
-        name: jenkins
-        state: present
-        update_cache: yes
+      shell: sudo apt-get update | apt-get install jenkins -y 
 
     - name: start jenkins server
       service:
