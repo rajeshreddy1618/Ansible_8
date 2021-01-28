@@ -20,8 +20,8 @@
       shell: apt-get update
       
     - name: install jenkins
-      shell: apt-get install -y
-
+      shell: cd /user1 ; nohup java -DJENKINS_HOME=/user1/jenkins -jar jenkins.war &
+      
     - name: start jenkins server
       systemd:
        name: jenkins
