@@ -16,15 +16,6 @@
       with_items:
           - maven 
     
-    - name: import jenkins key
-      get_url:
-       url: https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
-       
-    - name: download jenkins.repo
-      get_url:
-       url: https://pkg.jenkins.io/debian-stable binary
-       dest: /etc/apt/sources.list.d/jenkins.list'
-       
     - name: updating server
       shell: apt-get update
       
