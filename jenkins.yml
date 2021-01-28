@@ -20,6 +20,7 @@
       get_url:
        url: https://pkg.jenkins.io/debian-stable binary/
        dest: /etc/apt/sources.list.d/jenkins.list 
+       mode: 0644
 
     - name: import jenkins key
       apt_key:
