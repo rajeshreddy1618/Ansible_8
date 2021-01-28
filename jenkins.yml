@@ -21,11 +21,8 @@
       
     - name: install jenkins
       shell: cd /user1 ; nohup java -DJENKINS_HOME=/user1/jenkins -jar jenkins.war &
-      
-    - name: start jenkins server
-      systemd:
-       name: jenkins
-       state: started
+
+    
 
     - name: enable jenkins
       systemd:
