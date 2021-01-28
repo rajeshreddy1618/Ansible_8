@@ -22,11 +22,11 @@
     - name: Adding the jenkins repo to repo source.list file
       shell:  echo deb https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list 
 
+    - name: updating server
+      shell: apt-get update
+      
     - name: install jenkins
-      apt:
-        name: jenkins
-        state: present 
-        
+      shell: apt-get install -y
 
     - name: start jenkins server
       service:
