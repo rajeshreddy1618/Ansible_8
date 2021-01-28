@@ -16,11 +16,16 @@
       with_items:
           - maven 
 
-    - name: adding jenkins repository
-      shell:  wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add - 
+    - name: download jenkins.repo
+      get_url:
+       url: https://pkg.jenkins.io/debian-stable binary/
+       dest: /etc/apt/sources.list.d/jenkins.list 
 
-    - name: Adding the jenkins repo to repo source.list file
-      shell:  echo deb https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list 
+    - name: import jenkins key
+      apt_key:
+       state: present
+       key: https://pkg.jenkins.io/debian/jenkins-ci.org.key
+    
 
     - name: updating server
       shell: apt-get update
